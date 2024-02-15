@@ -76,7 +76,7 @@ const MainBar = () => {
                 placeholder="Enter phone number"
                 value={phoneNumber1}
                 onChange={setPhoneNumber1}
-                className="w-full pl-4 text-sm border rounded-lg border-[#E5E5E5] h-14 outline-2 md:text-lg placeholder:text-base "
+                className="w-[80%] md:w-full pl-4 text-sm border rounded-lg border-[#E5E5E5] h-14 outline-2 md:text-lg placeholder:text-base "
                 error={
                   phoneNumber1
                     ? isValidPhoneNumber(phoneNumber1)
@@ -102,7 +102,7 @@ const MainBar = () => {
                 placeholder="Enter phone number"
                 value={phoneNumber2}
                 onChange={setPhoneNumber2}
-                className="w-full pl-4 text-sm border rounded-lg border-[#E5E5E5] h-14 outline-2 md:text-lg placeholder:text-base"
+                className="w-[80%] md:w-full pl-4 text-sm border rounded-lg border-[#E5E5E5] h-14 outline-2 md:text-lg placeholder:text-base"
                 error={
                   phoneNumber2
                     ? isValidPhoneNumber(phoneNumber2)
@@ -170,7 +170,7 @@ const MainBar = () => {
 
       {showModal && (
         <div className="fixed inset-0 bg-gray-500 bg-opacity-75 flex items-center justify-center">
-          <div className="bg-white p-8 max-w-md rounded-md">
+          <div className="bg-white p-8 max-w-md rounded-md w-2/3 ">
             <h2 className="text-2xl font-semibold mb-4">User Details</h2>
             {formData && (
               <>
@@ -179,7 +179,7 @@ const MainBar = () => {
                 </p>
                 <p>
                   <strong>Date of Birth:</strong>{" "}
-                  {formData.dateOfBirth.toISOString()}
+                  {Date(formData.dateOfBirth.toISOString())}
                 </p>
               </>
             )}
