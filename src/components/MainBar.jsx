@@ -6,8 +6,8 @@ import "react-phone-number-input/style.css";
 import { SideBar } from "./SideBar";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
-import { validationSchema } from "@/schema/validationScema";
 import { useRouter } from "next/navigation";
+import { validationSchema } from "@/schema/validationSchema";
 
 const MainBar = () => {
   const router = useRouter();
