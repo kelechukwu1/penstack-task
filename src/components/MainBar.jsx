@@ -6,11 +6,9 @@ import "react-phone-number-input/style.css";
 import { SideBar } from "./SideBar";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
-import { useRouter } from "next/navigation";
 import { validationSchema } from "@/schema/validationSchema";
 
 const MainBar = () => {
-  const router = useRouter();
   const [phoneNumber1, setPhoneNumber1] = useState();
   const [phoneNumber2, setPhoneNumber2] = useState();
   const [showModal, setShowModal] = useState(false);
@@ -61,12 +59,12 @@ const MainBar = () => {
           <div className="space-y-2">
             <label htmlFor="phoneNumber1">Phone Number</label>
 
-            <div className="flex items-center gap-2">
+            <div className="md:flex items-center space-y-2 gap-2">
               <select
                 {...register("phoneNumber1")}
                 name="phoneNumber1"
                 id="phoneNumber1"
-                className=" px-2 text-sm border rounded-lg border-[#E5E5E5] h-14 md:text-lg placeholder:text-base text-secondary "
+                className="w-full px-2 text-sm border rounded-lg border-[#E5E5E5] h-14 md:text-lg placeholder:text-base text-secondary "
               >
                 <option value="mobile">Mobile</option>
                 <option value="work">Work</option>
@@ -76,7 +74,7 @@ const MainBar = () => {
                 placeholder="Enter phone number"
                 value={phoneNumber1}
                 onChange={setPhoneNumber1}
-                className="w-[80%] md:w-full pl-4 text-sm border rounded-lg border-[#E5E5E5] h-14 outline-2 md:text-lg placeholder:text-base "
+                className="w-full px-5 md:pl-4 text-sm border rounded-lg border-[#E5E5E5] h-14 outline-2 md:text-lg placeholder:text-base "
                 error={
                   phoneNumber1
                     ? isValidPhoneNumber(phoneNumber1)
@@ -87,12 +85,12 @@ const MainBar = () => {
               />
             </div>
 
-            <div className="flex items-center gap-2">
+            <div className="md:flex items-center space-y-2 gap-2">
               <select
                 {...register("phoneNumber2")}
                 name="phoneNumber2"
                 id="phoneNumber2"
-                className="px-2 text-sm border rounded-lg border-[#E5E5E5] h-14 md:text-lg placeholder:text-base text-secondary"
+                className="w-full px-2 text-sm border rounded-lg border-[#E5E5E5] h-14 md:text-lg placeholder:text-base text-secondary"
               >
                 <option value="Work">Work</option>
                 <option value="mobile">Mobile</option>
@@ -102,7 +100,7 @@ const MainBar = () => {
                 placeholder="Enter phone number"
                 value={phoneNumber2}
                 onChange={setPhoneNumber2}
-                className="w-[80%] md:w-full pl-4 text-sm border rounded-lg border-[#E5E5E5] h-14 outline-2 md:text-lg placeholder:text-base"
+                className="w-full px-5 md:pl-4 text-sm border rounded-lg border-[#E5E5E5] h-14 outline-2 md:text-lg placeholder:text-base"
                 error={
                   phoneNumber2
                     ? isValidPhoneNumber(phoneNumber2)
